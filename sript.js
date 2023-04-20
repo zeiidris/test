@@ -159,7 +159,7 @@ class Hero{
     }
     draw(context){
         context.beginPath()
-        context.lineWidth = r
+        context.lineWidth = 20
         context.strokeStyle = "#3f7ab9"
         context.arc(this.xpos,this.ypos,this.radius,0,Math.PI * 2,false)
         context.stroke()
@@ -275,21 +275,21 @@ function checkOnLoadBoxOnDots(){
     })
 }
 
-let hero = new Hero(heroX,heroY,r,"#3f7ab9","#4f99e8",index)
+let hero = new Hero(heroX,heroY,20,"#3f7ab9","#4f99e8",index)
 hero.draw(context)
 function moveHeroOnX(sign){
     if(sign =="right"){
         removeHero()
         index++ 
         heroX+=width/8
-        hero = new Hero(heroX,heroY,r,"#3f7ab9","#4f99e8",index)
+        hero = new Hero(heroX,heroY,20,"#3f7ab9","#4f99e8",index)
         hero.draw(context)
 }
     if(sign == "left"){
        removeHero()
         heroX=heroX-width/8
         index--
-        hero = new Hero(heroX,heroY,r,"#3f7ab9","#4f99e8",index)
+        hero = new Hero(heroX,heroY,20,"#3f7ab9","#4f99e8",index)
         hero.draw(context)
     }    
     checkHeroOnDot(sign)
@@ -300,13 +300,13 @@ function moveHeroOnY(sign){
     removeHero()    
     index+=8 
     heroY+=height/9
-    hero = new Hero(heroX,heroY,r,"#3f7ab9","#4f99e8",index)
+    hero = new Hero(heroX,heroY,20,"#3f7ab9","#4f99e8",index)
     hero.draw(context)
 } else if(sign == "up"){
     removeHero()
     heroY-=height/9
     index-=8
-    hero = new Hero(heroX,heroY,r,"#3f7ab9","#4f99e8",index)
+    hero = new Hero(heroX,heroY,20,"#3f7ab9","#4f99e8",index)
     hero.draw(context)
 }
 checkHeroOnDot(sign)
@@ -635,7 +635,7 @@ next.addEventListener('click',()=>{
     dots.splice("")
     getMap()
     CreateAllMap()
-    hero = new Hero(heroX,heroY,r,"#3f7ab9","#4f99e8",index)
+    hero = new Hero(heroX,heroY,20,"#3f7ab9","#4f99e8",index)
     hero.draw(context)
     checkOnLoadBoxOnDots()
     level.innerHTML = conter
